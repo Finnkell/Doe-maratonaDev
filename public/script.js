@@ -4,4 +4,5 @@ document
     document
       .querySelector('.form')
       .classList.toggle('hide')
-  });
+  }
+);

@@ -65,7 +65,7 @@ section.form {
 }
 
 
-form input, form button {
+form input, form button, form select {
     width: 100%;
     margin-bottom: 4px;
     box-sizing: border-box;
@@ -125,6 +125,7 @@ main .donors {
 
 .donor p {
     margin-top: 24px;
+    margin-bottom: 30px;
     font-size: 14px;
 }
 

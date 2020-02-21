@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed&display=swap" rel="stylesheet">
-    <title>Roque Porra</title>
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    <title>DOE</title>
 
 
 </head>
 <body>  
     <header>  
-        <img class="logo" src="logo.png" alt="DOE" >
+        <img class="logo" src="/logo.png" alt="DOE" >
         <h2>Sua doação importa</h2>
     
         <p>Até 3 vidas com uma doação</p>
@@ -24,19 +25,32 @@
 
     <section class="form hide">
         <h2>Entre na lista de doadores</h2>
-        <form action="/" method="post">
+        <form action="/" method="POST">
             <input type="text" 
             name="name" 
             placeholder="Nome Completo"
             >
+            
             <input type="text" 
             name="email" 
             placeholder="Email"
             >
-            <input type="text" 
+
+            <!-- <input type="text" 
             name="blood" 
             placeholder="Tipo sanguíneo"
-            >
+            > -->
+
+            <select name="blood">
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
 
         <button>Quero ajudar!</button>
 
@@ -46,31 +60,22 @@
 
     <main>
         <h2>Últimos <span>doadores</span> </h2>
+        
         <section class="donors">
-            <div class="donor">
-                <div class="blood">AB+</div>
-                <p>Mateus Cabelo</p>
-            </div>
+
+            {% for donor in donors %}
 
             <div class="donor">
-                <div class="blood">B+</div>
-                <p>José Schiptioski</p>
+                <div class="blood">{{donor.blood}}</div>
+                <p>{{donor.name}}</p>
             </div>
 
-            <div class="donor">
-                <div class="blood">O-</div>
-                <p>Eduarda Rodrigues</p>
-            </div>
-
-            <div class="donor">
-                <div class="blood">O+</div>
-                <p>Daiane Karina</p>
-            </div>
+            {%endfor%}
         </section>
     </main>
 
     <footer>
-        Com amor ✌😗 para Daia
+        Com amor ✌😗❤ @Finnkell
     </footer>
 
     <script src="script.js"></script>
